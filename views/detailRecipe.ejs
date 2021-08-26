@@ -13,11 +13,11 @@
     <h1><%= data.name %></h1>
 
     <h2>Ingredients:</h2>
-    <li>
-        <% if(data.Ingredient) data.Ingredient.forEach(el => {%>
-            <ul><%= el.name %></ul>
+    <ul>
+        <% data.Ingredients.forEach(el => {%>
+            <li><%= el.name %> <%= el.RecipesIngredient.ingredient_amount %> </li>
         <% }) %>
-    </li>
+        </ul>
     
     <h2>How To Cook:</h2>
     <p><%= data.cooking_instructions %></p>

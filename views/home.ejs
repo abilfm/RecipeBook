@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Book</title>
-</head>
-<body>
-    <!-- <a href="/register" style="font-style: italic;">Sign Up</a>
-    <a href="/login" style="font-style: italic;">Log In</a> -->
-    <%- include('./partials/navbar') %> 
-    <h1>Recipe Book</h1>
-    <h2><a href="/recipes">List of Recipes</a></h2>
-    <h2><a href="/ingredients">Search Recipes by Ingredients</a></h2>
-</body>
-</html>
+<%- include('./partials/header') %> 
+<%- include('./partials/navbar') %> 
+
+    <h1> <%= result.t_i_t_l_e || result.T_I_T_L_E %> </h1>
+
+    <h2><a href="/recipes"><%= result.l_i_n_k_1 || result.L_i_n_k_1 %></a></h2>
+    <h2><a href="/ingredients"><%= result.l_i_n_k_2 || result.L_i_n_k_2%></a></h2>
+
+<%- include('./partials/footer') %> 

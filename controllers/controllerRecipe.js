@@ -74,11 +74,11 @@ class Controller {
   }
 
   static detailRecipe (req, res) {
-    Recipe.findOne(
-      { where : { id : req.params.id } },
+    Recipe.findByPk(req.params.id,
       { include :  Ingredient }
     )
 		.then(data => {
+      // res.send(data)
       res.render("detailRecipe", { data })
 		})
 		.catch(err => {
