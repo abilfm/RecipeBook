@@ -19,7 +19,14 @@
         <label for="">Servings</label><br>
         <input type="integer" name="servings" value="<%= data.recipe.servings%>"><br>
         <label for="">How To Cook</label><br>
-        <textarea rows="5" cols="40" name="cooking_instructions" value=""> <%= data.recipe.cooking_instructions%> </textarea> <br>
+        <textarea rows="5" cols="40" name="cooking_instructions"> <%= data.recipe.cooking_instructions%> </textarea> <br>
+<!-- 
+        <ul>
+            <% data.recipe.Ingredients.forEach(el => {%>
+                <li><%= el.name %> <input type="text" name="<%= el.id %>"> </li>
+            <% }) %>
+        </ul> -->
+
         <input type="submit" value="Save Recipe">
     </form>
 </body>

@@ -114,7 +114,9 @@ class Controller {
   }
 
   static postEditRecipe (req, res) {
-    let { name, cooking_time, servings, cooking_instructions } = req.body
+    let { name, cooking_time, servings, cooking_instructions, ingredient_amount } = req.body
+
+    res.send(req.body)
 
     Recipe.update(
       { name, cooking_time, servings, cooking_instructions },
