@@ -31,12 +31,21 @@ class Controller {
   }
 
   static getEditRecipe (req, res) {
+    let result = {}
     Recipe.findByPk(
       req.params.id,
+      { include :  Ingredient }
     )
 		.then(data => {
-      res.render("editRecipe", {data})
+      // res.send(data)
+      result.recipe = data
+      return Ingredient.findAll()
 		})
+    .then(data => {
+      result.ingredient = data
+      res.send(result)
+      res.render("editRecipe", {result})
+    })
 		.catch(err => {
 			res.send(err)
 		})
@@ -84,7 +93,6 @@ class Controller {
 		.catch(err => {
 			res.send(err)
 		})
-    
   }
 }
 
