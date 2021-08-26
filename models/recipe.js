@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const {translator, capitalize} = require("../helpers/textProcessor")
 module.exports = (sequelize, DataTypes) => {
   class Recipe extends Model {
     /**
@@ -18,6 +19,17 @@ module.exports = (sequelize, DataTypes) => {
     formatCookingTime() {
       return `${this.cooking_time} minutes`
     }
+
+    // translate(text, lang) {
+    //   translator(text, lang)
+    //     .then(data => {
+    //       return data
+    //     })
+    //     .catch(err => {
+    //       return err
+    //     })
+    // }
+
   };
   Recipe.init({
     name: {

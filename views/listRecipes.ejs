@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,18 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe List</title>
 </head>
-<body>
+<body> -->
+
+<%- include('./partials/header') %> 
+
     <a href="/" style="font-style: italic;">Home</a>
     <a href="/recipes" style="font-style: italic;">List of Recipes</a>
-    <a href="/ingredients" style="font-style: italic;">Search by Ingredients</a>
-    <h1>List of Recipe</h1>
-    <h3><a href="/recipes/add">Add New Recipe</a></h3>
+    <!-- <a href="/ingredients" style="font-style: italic;">Search by Ingredients</a> -->
+    
+    <h1><%= webData.t_i_t_l_e || webData.T_I_T_L_E %></h1>
+    <h3><a href="/recipes/add"><%= webData.l_i_n_k_1 %></a></h3>
     <table border=1>
         <tr>
-            <th>Name</th>
-            <th>Cooking Time</th>
-            <th>Servings</th>
-            <th>Action</th>
+            <th><%=webData.t_h_e_a_d_1%></th>
+            <th><%=webData.t_h_e_a_d_2%></th>
+            <th><%=webData.t_h_e_a_d_3%></th>
+            <th><%=webData.t_h_e_a_d_4%></th>
         </tr>
         <% data.forEach(el => { %>
             <tr>
@@ -25,12 +29,17 @@
                 <td><%= el.formatCookingTime() %></td>
                 <td><%= el.servings %></td>
                 <td>
-                    <a href="/recipes/edit/<%= el.id%>"> Edit </a>|
-                    <a href="/recipes/delete/<%= el.id%>"> Delete </a>|
-                    <a href="/recipes/details/<%= el.id%>"> Details </a>
+                    <a href="/recipes/edit/<%= el.id%>"> <%=webData.a_c_t_1%> </a>|
+                    <a href="/recipes/delete/<%= el.id%>"> <%=webData.a_c_t_2%> </a>|
+                    <a href="/recipes/details/<%= el.id%>"> <%=webData.a_c_t_3%> </a>
                 </td>
             </tr>
         <% }) %>
     </table>
-</body>
-</html>
+
+
+
+
+<%- include('./partials/footer') %> 
+<!-- </body>
+</html> -->

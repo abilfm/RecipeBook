@@ -15,4 +15,16 @@ const translator = (object, targetLanguage) => {  //RETURNS A PROMISE
     })
 }
 
-module.exports = {translator, capitalize}
+const sTranslator = (translateText, targetLanguage) => {  //RETURNS A PROMISE
+  let result
+  return translate(translateText, {to: `${targetLanguage}`})
+    .then(data => {
+      return data.text.toLowerCase()
+    })
+    .catch(err => {
+      return err
+    })
+}
+
+
+module.exports = {translator, capitalize, sTranslator}

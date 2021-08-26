@@ -9,7 +9,7 @@
 <body>
     <a href="/" style="font-style: italic;">Home</a>
     <a href="/recipes" style="font-style: italic;">List of Recipes</a>
-    <a href="/ingredients" style="font-style: italic;">Search by Ingredients</a>
+    <!-- <a href="/ingredients" style="font-style: italic;">Search by Ingredients</a> -->
     <h1>Add New Recipe</h1>
     <form action="/recipes/add" method="POST">
         <label for="">Name</label><br>
@@ -19,7 +19,13 @@
         <label for="">Servings</label><br>
         <input type="integer" name="servings"><br>
         <label for="">How To Cook</label><br>
-        <input type="text-box" name="cooking_instructions"><br>
+        <textarea name="cooking_instructions" rows="5" cols="40"> </textarea><br>
+
+        <% data.forEach(el => {%>
+            <input type="checkbox" name="IngredientId" value="<%= el.id %>">
+            <label><%= el.name %></label><br>
+        <% }) %>
+
         <input type="submit" value="Save Recipe">
     </form>
 </body>

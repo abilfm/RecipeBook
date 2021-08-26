@@ -9,17 +9,17 @@
 <body>
     <a href="/" style="font-style: italic;">Home</a>
     <a href="/recipes" style="font-style: italic;">List of Recipes</a>
-    <a href="/ingredients" style="font-style: italic;">Search by Ingredients</a>
-    <h1>Add New Recipe</h1>
-    <form action="/recipes/edit/<%= data.id%>" method="POST">
+    <!-- <a href="/ingredients" style="font-style: italic;">Search by Ingredients</a> -->
+    <h1>Edit Recipe</h1>
+    <form action="/recipes/edit/<%=data.recipe.id%>" method="POST">
         <label for="">Name</label><br>
-        <input type="text" name="name" value="<%= data.name%>"><br>
+        <input type="text" name="name" value="<%= data.recipe.name%>"><br>
         <label for="">Cooking Time</label><br>
-        <input type="integer" name="cooking_time" value="<%= data.cooking_time%>"><br>
+        <input type="integer" name="cooking_time" value="<%= data.recipe.cooking_time%>"><br>
         <label for="">Servings</label><br>
-        <input type="integer" name="servings" value="<%= data.servings%>"><br>
+        <input type="integer" name="servings" value="<%= data.recipe.servings%>"><br>
         <label for="">How To Cook</label><br>
-        <input type="text-box" name="cooking_instructions" value="<%= data.cooking_instructions%>"><br>
+        <textarea rows="5" cols="40" name="cooking_instructions" value=""> <%= data.recipe.cooking_instructions%> </textarea> <br>
         <input type="submit" value="Save Recipe">
     </form>
 </body>

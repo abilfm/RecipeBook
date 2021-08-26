@@ -4,6 +4,7 @@ const router = express.Router()
 const {checkIsLogin} = require('../helpers/session')
 
 router.get("/", Controller.recipesList)
+router.get("/?lang", Controller.recipesList)
 router.get("/add", checkIsLogin, Controller.getAddRecipe)
 router.post("/add", checkIsLogin, Controller.postAddRecipe)
 router.get("/edit/:id", checkIsLogin, Controller.getEditRecipe)
