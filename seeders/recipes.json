@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Chinese Broccoli with Oyster Sauce",
+        "cooking_time": 15,
+        "servings": 2,
+        "cooking_instructions": "Trim ends off Chinese Broccoli. If any stems are super thick, cut them in half (you want all stems approximately the same width. Steam Chinese Broccoli using whatever method you want - I microwave in a steamer on high for 4 minutes. The stem should be just cooked - not super soft and floppy. Stack the Chinese broccoli together and cut into 4/10cm lengths, then stack neatly on top of each other. Combine water and corn flour in small saucepan, mix to dissolve. Then add remaining ingredients, turn stove onto medium and bring to boil. Boil for 30 seconds to allow to thicken, then remove from stove. Drizzle over Chinese broccoli and serve. Best served warm."
+    },
+    {
+        "name": "Chinese Noodle Soup",
+        "cooking_time": 20,
+        "servings": 2,
+        "cooking_instructions": "Place Broth ingredients in a saucepan over high heat. Place lid on, bring to simmer then reduce to medium and simmer for 8 - 10 minutes to allow the flavours to infuse. Meanwhile, cook noodles according to packet directions. Cut bok choys in half (for small / medium) or quarter (for large). Wash thoroughly. Either cook the bok choi in the broth in the soup broth OR noodle cooking water for 1 min (if noodles required boiling). Pick garlic and ginger out of soup. Place noodles in bowls. Top with chicken and bok choy. Ladle over soup, garnish with green onions. Great served with chilli paste or fresh chillis."
+    }
+]

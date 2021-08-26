@@ -1,0 +1,12 @@
+[
+    {
+        "RecipeId": 1,
+        "IngredientId": 1,
+        "ingredient_amount": "3 cups, 2 cloves, 1.5 cm, 1 1/2 tbsp, 2 tsp, 1 1/2 tbsp, 1/2 tsp, 180gr, 2 pcs, 1 cup, 1 pcs"
+    },
+    {
+        "RecipeId": 2,
+        "IngredientId": 2,
+        "ingredient_amount": "3/4 tsp, 3 tbsp, 2 tbsp, 2 tsp, 1 tbsp, 1/2 tsp, 1/2 tbsp, 1/2 tsp, 1 clove, 1 tsp"
+    }
+]
