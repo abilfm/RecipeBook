@@ -1,4 +1,5 @@
 const { User } = require("../models")
+const { checkPassword } = require('../helpers/bcrypt')
 
 class Controller {
   static getLogin (req, res) {
@@ -6,17 +7,30 @@ class Controller {
   }
   
   static postLogin (req, res) {
+    let data = req.body
     User.findOne({
-      where :  {
-        username : req.body.username, 
-        password : req.body.password
-      }
-    }) 
-      .then( _ => {
-        res.redirect("/")
+      where: { username: data.username }
+    })
+      .then(result => {
+        if (result) {
+          let isCorrect = checkPassword(data.password, result.password)
+          if (isCorrect) {
+            req.session.isLogin = true
+            req.session.username = data.username
+            req.session.role = data.role
+            // console.log(req.session, '<<<< SESSION');
+            res.redirect('/')
+          }
+          else {
+            res.send('Login failed')
+          }
+        }
+        else {
+          res.send('No such user')
+        }
       })
-      .catch(err => {
-        res.send(err)
+      .catch(error => {
+        res.send(error)
       })
   }
 }
