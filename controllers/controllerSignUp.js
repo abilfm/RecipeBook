@@ -24,7 +24,6 @@ class Controller {
         console.log(err);
         res.send(err)
       })
-    //   res.render("register")
   }
   
   static postRegister (req, res) {

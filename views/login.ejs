@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
+<%- include('./partials/header') %> 
     <a href="/" style="font-style: italic;">Home</a>
-    <h1>Sign-In</h1>
+
+    <h1><%= result.t_i_t_l_e || result.T_I_T_L_E %> </h1>
     <form action="/login" method="POST">
-        <label for="">Username</label><br>
+        <label for=""><%= result.i_n_p_u_t_1 %></label><br>
         <input type="text" name="username"><br>
-        <label for="">Password</label><br>
+        <label for=""><%= result.i_n_p_u_t_2 %></label><br>
         <input type="password" name="password"><br>
-        <input type="submit" value="Sign-In">
+        <input type="submit" value="<%= result.t_i_t_l_e || result.T_I_T_L_E %>">
     </form>
-</body>
-</html>
+
+<%- include('./partials/footer') %> 

@@ -1,9 +1,31 @@
 const { User } = require("../models")
 const { checkPassword } = require('../helpers/bcrypt')
+const {translator, capitalize} = require("../helpers/textProcessor")
 
 class Controller {
   static getLogin (req, res) {
-      res.render("login")
+    let lang
+    if (!req.query.lang) {
+      lang = 'en'
+    }
+    else {
+      lang = req.query.lang
+    }
+    let data = {t_i_t_l_e: 'Sign-In', i_n_p_u_t_1: 'Username', i_n_p_u_t_2 : 'Password' }
+    translator(data, lang)
+      .then(result => {
+        // console.log(result, '<<<< RESULT');
+        for (const item in result) {
+          result[item] = capitalize(result[item])
+        }
+        // console.log(result, '<<<< RESULT');
+        res.render('login', {result})
+      })
+      .catch(err => {
+        console.log(err);
+        res.send(err)
+      })
+      // res.render("login")
   }
   
   static postLogin (req, res) {
