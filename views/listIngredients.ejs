@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingredients</title>
+</head>
+<body>
+    <a href="/" style="font-style: italic;">Home</a>
+    <a href="/recipes" style="font-style: italic;">List of Recipes</a>
+    <a href="/ingredients" style="font-style: italic;">Search by Ingredients</a>
+    <form action="/ingredients" method="POST"> 
+    <h1>Search by Ingredients</h1>
+    <% data.forEach(el => {%>
+        <input type="checkbox" name="RecipeId" value="<%= el.id %>">
+        <label><%= el.name %></label><br>
+    <% }) %>
+        <input type="submit" value="Find Recipes">
+    </form>
+</body>
+</html>

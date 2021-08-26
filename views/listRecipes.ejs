@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe List</title>
+</head>
+<body>
+    <a href="/" style="font-style: italic;">Home</a>
+    <a href="/recipes" style="font-style: italic;">List of Recipes</a>
+    <a href="/ingredients" style="font-style: italic;">Search by Ingredients</a>
+    <h1>List of Recipe</h1>
+    <h3><a href="/recipes/add">Add New Recipe</a></h3>
+    <table border=1>
+        <tr>
+            <th>Name</th>
+            <th>Cooking Time</th>
+            <th>Servings</th>
+            <th>Action</th>
+        </tr>
+        <% data.forEach(el => { %>
+            <tr>
+                <td><%= el.name %></td>
+                <td><%= el.formatCookingTime() %></td>
+                <td><%= el.servings %></td>
+                <td>
+                    <a href="/recipes/edit/<%= el.id%>"> Edit </a>|
+                    <a href="/recipes/delete/<%= el.id%>"> Delete </a>|
+                    <a href="/recipes/details/<%= el.id%>"> Details </a>
+                </td>
+            </tr>
+        <% }) %>
+    </table>
+</body>
+</html>

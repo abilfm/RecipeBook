@@ -14,12 +14,44 @@ module.exports = (sequelize, DataTypes) => {
       Recipe.hasMany(models.CustomRecipe)
       Recipe.belongsToMany(models.Ingredient, { through: "RecipesIngredient" })
     }
+
+    formatCookingTime() {
+      return `${this.cooking_time} minutes`
+    }
   };
   Recipe.init({
-    name: DataTypes.STRING,
-    cooking_time: DataTypes.INTEGER,
-    servings: DataTypes.INTEGER,
-    cooking_instructions: DataTypes.TEXT,
+    name: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          msg: "Name is required"
+        }
+      }
+    },
+    cooking_time: {
+      type: DataTypes.INTEGER,
+      validate: {
+        notEmpty: {
+          msg: "Cooking Time is required"
+        }
+      }
+    },
+    servings: {
+      type: DataTypes.INTEGER,
+      validate: {
+        notEmpty: {
+          msg: "Servings is required"
+        }
+      }
+    },
+    cooking_instructions: {
+      type: DataTypes.TEXT,
+      validate: {
+        notEmpty: {
+          msg: "Cooking Instructions can not be emptied"
+        }
+      }
+    },
   }, {
     sequelize,
     modelName: 'Recipe',

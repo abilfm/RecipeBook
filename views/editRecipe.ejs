@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe</title>
+</head>
+<body>
+    <a href="/" style="font-style: italic;">Home</a>
+    <a href="/recipes" style="font-style: italic;">List of Recipes</a>
+    <a href="/ingredients" style="font-style: italic;">Search by Ingredients</a>
+    <h1>Add New Recipe</h1>
+    <form action="/recipes/edit/<%= data.id%>" method="POST">
+        <label for="">Name</label><br>
+        <input type="text" name="name" value="<%= data.name%>"><br>
+        <label for="">Cooking Time</label><br>
+        <input type="integer" name="cooking_time" value="<%= data.cooking_time%>"><br>
+        <label for="">Servings</label><br>
+        <input type="integer" name="servings" value="<%= data.servings%>"><br>
+        <label for="">How To Cook</label><br>
+        <input type="text-box" name="cooking_instructions" value="<%= data.cooking_instructions%>"><br>
+        <input type="submit" value="Save Recipe">
+    </form>
+</body>
+</html>

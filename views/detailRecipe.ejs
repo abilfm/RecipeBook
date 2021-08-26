@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Recipe</title>
+</head>
+<body>
+    <a href="/" style="font-style: italic;">Home</a>
+    <a href="/recipes" style="font-style: italic;">List of Recipes</a>
+    <a href="/ingredients" style="font-style: italic;">Search by Ingredients</a>
+    <h1><%= data.name %></h1>
+
+    <h2>Ingredients:</h2>
+    <li>
+        <% if(data.Ingredient) data.Ingredient.forEach(el => {%>
+            <ul><%= el.name %></ul>
+        <% }) %>
+    </li>
+    
+    <h2>How To Cook:</h2>
+    <p><%= data.cooking_instructions %></p>
+</body>
+</html>

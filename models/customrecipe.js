@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   CustomRecipe.init({
     custom_name: DataTypes.STRING,
-    cooking_instructions: DataTypes.STRING,
+    cooking_instructions: DataTypes.TEXT,
     RecipeId: DataTypes.INTEGER
   }, {
     sequelize,
